@@ -12,7 +12,7 @@ export default class TakeCoinsFilterServices {
         },
       },
     });
-    const startNumber = start * 100 * 10;
+    const startNumber = start * 50 * 10;
     const finishNumber = startNumber + 1000;
     const filter = result.slice(startNumber, finishNumber);
 
