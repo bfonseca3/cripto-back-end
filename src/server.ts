@@ -34,7 +34,7 @@ addNewHistory();
 setInterval(() => {
   addNewHistory();
   console.log("chamou");
-}, 1800000);
+}, 3600000);
 
 // app.get("/cadastrar", async (request: Request, response: Response) => {
 //   console.log("entrou");
