@@ -12,8 +12,8 @@ export default class TakeCoinsFilterServices {
         },
       },
     });
-    const startNumber = start * 10 * 10;
-    const finishNumber = startNumber + 100;
+    const startNumber = start * 100 * 10;
+    const finishNumber = startNumber + 1000;
     const filter = result.slice(startNumber, finishNumber);
 
     const totalValuePages = result.length / 100 - 1;

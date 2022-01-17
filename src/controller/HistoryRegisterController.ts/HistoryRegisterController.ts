@@ -7,6 +7,12 @@ import {
 
 export class HistoryRegisterController {
   async handle(req: Request, res: Response) {
+    const { key } = req.query;
+
+    if (key !== process.env.KEY) {
+      return res.status(401).json({ error: "Not allowed" });
+    }
+
     // Pegando a ultima atualização das coins
     const { data: history } = await axios.get<ExecuteProps>(
       "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",

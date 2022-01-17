@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { router } from "./router";
+import axios from "axios";
+import { Console } from "console";
 
 const app = express();
 
@@ -11,9 +13,29 @@ app.use(express.json({ limit: "500mb" }));
 app.use(router);
 
 const port = process.env.PORT || 3000;
+
 app.listen(process.env.PORT || 3000, () =>
   console.log(`Server is running on port ${port}`)
 );
+
+async function addNewHistory() {
+  const { status } = await axios.get(`${process.env.URL_BACKEND}/new/history`, {
+    params: { key: process.env.KEY },
+  });
+
+  if (status == 200) {
+    return;
+  } else {
+    console.log("Erro ao atualizar historico");
+  }
+}
+
+addNewHistory();
+
+setInterval(() => {
+  addNewHistory();
+  console.log("chamou");
+}, 1800000);
 
 // app.get("/cadastrar", async (request: Request, response: Response) => {
 //   console.log("entrou");
