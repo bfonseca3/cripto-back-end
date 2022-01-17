@@ -8,7 +8,6 @@ export class RegisterCoinController {
     const { data: coins } = await axios.get(
       "https://pro-api.coinmarketcap.com/v1/cryptocurrency/map",
       {
-        params: { start: "1", limit: "5000" },
         headers: {
           "X-CMC_PRO_API_KEY": process.env.CRIPTO_KEY,
         },

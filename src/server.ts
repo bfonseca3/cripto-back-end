@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import { router } from "./router";
 import axios from "axios";
-import { Console } from "console";
 
 const app = express();
 
