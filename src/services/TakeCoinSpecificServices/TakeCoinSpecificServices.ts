@@ -7,7 +7,11 @@ export class TakeCoinSpecificServices {
         id_coin: id,
       },
       include: {
-        history: true,
+        history: {
+          orderBy: {
+            date: "desc",
+          },
+        },
       },
     });
 
