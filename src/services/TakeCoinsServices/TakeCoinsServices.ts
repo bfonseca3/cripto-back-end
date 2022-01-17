@@ -2,10 +2,17 @@ import { prisma } from "../../utils/prisma";
 
 export class TakeCoinsServices {
   async execute() {
-    const coins = await prisma.coins.findMany({
-      include: { history: true },
+    const result = await prisma.coins.findMany({
+      include: {
+        history: {
+          orderBy: {
+            date: "desc",
+          },
+          take: 1,
+        },
+      },
     });
 
-    return coins;
+    return result;
   }
 }

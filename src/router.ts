@@ -10,7 +10,7 @@ const router = Router();
 
 router.post("/register/coin", new RegisterCoinController().handle);
 
-// router.get("/coin/take/all", new TageCoinsController().handle);
+router.get("/coin/take/all", new TageCoinsController().handle);
 
 router.get("/new/history", new HistoryRegisterController().handle);
 

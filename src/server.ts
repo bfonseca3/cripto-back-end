@@ -29,7 +29,7 @@ async function addNewHistory() {
   }
 }
 
-addNewHistory();
+// addNewHistory();
 
 setInterval(() => {
   addNewHistory();
