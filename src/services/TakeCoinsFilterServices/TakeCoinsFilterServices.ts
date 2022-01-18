@@ -2,7 +2,12 @@ import { prisma } from "../../utils/prisma";
 
 export default class TakeCoinsFilterServices {
   async execute(start: number) {
+    const numberStart = start * 50 * 10;
+    const numberTake = 500;
+
     const result = await prisma.coins.findMany({
+      skip: numberStart,
+      take: numberTake,
       include: {
         history: {
           orderBy: {
@@ -12,12 +17,7 @@ export default class TakeCoinsFilterServices {
         },
       },
     });
-    const startNumber = start * 50 * 10;
-    const finishNumber = startNumber + 500;
-    const filter = result.slice(startNumber, finishNumber);
 
-    const totalValuePages = result.length / 100 - 1;
-
-    return { count: totalValuePages, filter };
+    return { filter: result };
   }
 }
