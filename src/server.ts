@@ -29,12 +29,12 @@ async function addNewHistory() {
   }
 }
 
-addNewHistory();
+// addNewHistory();
 
-setInterval(() => {
-  addNewHistory();
-  console.log("chamou");
-}, 3600000);
+//  setInterval(() => {
+//   addNewHistory();
+//   console.log("chamou");
+//  }, 3600000);
 
 // app.get("/cadastrar", async (request: Request, response: Response) => {
 //   console.log("entrou");
