@@ -36,16 +36,16 @@ setInterval(() => {
   console.log("chamou");
 }, 3600000);
 
-app.get("/cadastrar", async (request: Request, response: Response) => {
-  console.log("entrou");
+//app.get("/cadastrar", async (request: Request, response: Response) => {
+  //console.log("entrou");
 
-  const { data: coins } = await axios.get(
-   "https://pro-api.coinmarketcap.com/v1/cryptocurrency/map",
-   {
-   params: { start: "1", limit: "5000" },
-      headers: { "X-CMC_PRO_API_KEY": "a14883c2-de04-4374-8307-0ad9be296966" },
-    }
-  );
+  //const { data: coins } = await axios.get(
+  // "https://pro-api.coinmarketcap.com/v1/cryptocurrency/map",
+  // {
+  // params: { start: "1", limit: "5000" },
+  //    headers: { "X-CMC_PRO_API_KEY": "a14883c2-de04-4374-8307-0ad9be296966" },
+   // }
+  //);
 
 //   await axios.post("http://localhost:8000/register/coin", {
 //     data: coins.data,
