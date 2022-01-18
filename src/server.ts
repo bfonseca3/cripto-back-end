@@ -6,8 +6,8 @@ import axios from "axios";
 const app = express();
 
 app.use(cors());
-app.use(express.urlencoded({ limit: "900mb", extended: true }));
-app.use(express.json({ limit: "900mb" }));
+app.use(express.urlencoded({ limit: "460mb", extended: true }));
+app.use(express.json({ limit: "460mb" }));
 
 app.use(router);
 
