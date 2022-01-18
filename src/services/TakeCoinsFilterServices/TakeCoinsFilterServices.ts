@@ -6,15 +6,8 @@ export default class TakeCoinsFilterServices {
     const numberTake = 500;
 
     const result = await prisma.coins.findMany({
-      take: 300,
-      include: {
-        history: {
-          orderBy: {
-            date: "desc",
-          },
-          take: 1,
-        },
-      },
+      skip: numberStart,
+      take: numberTake,
     });
 
     return { filter: result };
