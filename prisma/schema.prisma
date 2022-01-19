@@ -16,6 +16,7 @@ model Coins {
   id_coin Int
   name    String
   symbol  String    @unique
+  rank    Int
   history History[]
 
   @@map("coins")

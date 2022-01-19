@@ -4,6 +4,7 @@ interface CoinProps {
   name: string;
   symbol: string;
   id: number;
+  rank: number;
 }
 
 interface ExecuteProps {
@@ -18,6 +19,7 @@ export class RegisterCoinServices {
           name: element.name,
           id_coin: element.id,
           symbol: element.symbol,
+          rank: element.rank,
         };
       }),
     });
