@@ -6,6 +6,9 @@ export default class TakeCoinsFilterServices {
     const numberTake = 500;
 
     const result = await prisma.coins.findMany({
+      orderBy: {
+        name: "asc",
+      },
       skip: numberStart,
       take: numberTake,
       include: {
