@@ -15,7 +15,7 @@ const router = Router();
 
 router.post(
   "/register/coin",
-  ensureAuthenticated,
+  // ensureAuthenticated,
   new RegisterCoinController().handle
 );
 
@@ -25,13 +25,13 @@ router.get("/new/history", new HistoryRegisterController().handle);
 
 router.get(
   "/coin/take/:id",
-  ensureAuthenticated,
+  // ensureAuthenticated,
   new TakeCoinSpecificController().handle
 );
 
 router.get(
   "/coin/filter/front",
-  ensureAuthenticated,
+  // ensureAuthenticated,
   new TakeCoinsFilterController().handle
 );
 
@@ -41,19 +41,19 @@ router.post("/authenticated/user", new AuthenticatedUserController().handle);
 
 router.post(
   "/addtofavorite",
-  ensureAuthenticated,
+  // ensureAuthenticated,
   new AddToFavoriteController().handle
 );
 
 router.get(
   "/favorite/user",
-  ensureAuthenticated,
+  // ensureAuthenticated,
   new TakeFavoriteController().handle
 );
 
 router.post(
   "/removefavorite",
-  ensureAuthenticated,
+  // ensureAuthenticated,
   new RemoveFavoriteController().handle
 );
 
